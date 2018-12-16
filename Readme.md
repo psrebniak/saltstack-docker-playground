@@ -1,4 +1,4 @@
-# docker-compose (saltstack)[https://docs.saltstack.com] playground
+# docker-compose [saltstack](https://docs.saltstack.com) playground
 
 ## directory structure
 - data/master.conf - master configuration file - just type there your changes to master file
