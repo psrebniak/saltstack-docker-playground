@@ -2,7 +2,8 @@
 
 ## directory structure
 - data/master.conf - master configuration file - just type there your changes to master file
-- data/pillar - will be mounted as /srv/pillar
+- data/minion.conf - minion configuration file - just type there your changes to minion file
+- data/pillar - will be mounted as /srv/pillar 
 - data/salt - will be mounted as /srv/salt
 - data/formulas - will be mounted as /srv/formulas
 
