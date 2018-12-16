@@ -20,13 +20,13 @@ Containers:
 ## how to run
 ```$ docker-compose up --build```
 
-there is no need to run `$ salt '*' state.apply` on startup. 
-Master will apply state due to `startup_states: highstate` entry in minion.conf.
-It can take some time to bootstrap minions.
+there is no need to run `$ salt '*' state.apply` on startup.<br/>
+Master will apply state due to `startup_states: highstate` entry in minion.conf.<br/>
+It can take some time to bootstrap minions.<br/>
 
 ## how to get into master
 ```$ docker-compose exec master /bin/bash```
 
 ## how to get into minion
-```$ docker-compose exec --index=1 minion-dev /bin/bash```
+```$ docker-compose exec --index=1 minion-dev /bin/bash```<br/>
 ```$ docker-compose exec --index=1 minion-prod /bin/bash```
