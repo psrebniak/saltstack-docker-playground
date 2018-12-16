@@ -1,9 +1,16 @@
 # docker-compose [saltstack](https://docs.saltstack.com) playground
 
+Docker-compose file that create saltstack playground.
+Containers:
+- master - master container
+- minions with prefixed ID (prefix-hostname)
+    - prod-* - two containers for production
+    - dev-* - two containers for development
+
 ## directory structure
 - data/master.conf - master configuration file - just type there your changes to master file
 - data/minion.conf - minion configuration file - just type there your changes to minion file
-- data/pillar - will be mounted as /srv/pillar 
+- data/pillar - will be mounted as /srv/pillar
 - data/salt - will be mounted as /srv/salt
 - data/formulas - will be mounted as /srv/formulas
 
@@ -18,6 +25,8 @@ Master will apply state due to `startup_states: highstate` entry in minion.conf.
 It can take some time to bootstrap minions.
 
 ## how to get into master
-```$ docker-compose exec salt-master /bin/bash```
+```$ docker-compose exec master /bin/bash```
 
-you can login to salt-minion-1 and salt-minion-2 by just changing container name to command above
+## how to get into minion
+```$ docker-compose exec --index=1 minion-dev /bin/bash```
+```$ docker-compose exec --index=1 minion-prod /bin/bash```

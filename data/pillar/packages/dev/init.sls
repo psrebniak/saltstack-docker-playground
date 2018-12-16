@@ -3,9 +3,5 @@
 packages:
   pkgs:
     wanted:
-      - wget
-      - curl
-      - bc
-      - vim
-      - ranger
-      - highlight
+      - git
+      - htop

@@ -1,7 +1,7 @@
-version: '3'
+version: '2.2'
 
-services: 
-  salt-master:
+services:
+  master:
     build: ./docker/master/
     hostname: salt-master
     volumes:
@@ -9,17 +9,21 @@ services:
       - ./data/pillar:/srv/pillar
       - ./data/salt:/srv/salt
       - ./data/formulas:/srv/formulas
-  salt-minion-1:
+  minion-prod:
     build: ./docker/minion/
-    hostname: salt-minion-1
+    environment:
+      - SALT_PREFIX=prod
     depends_on:
-      - salt-master    
+      - master
     volumes:
       - ./data/minion.conf:/etc/salt/minion.d/minion.conf
-  salt-minion-2:
+    scale: 2
+  minion-dev:
     build: ./docker/minion/
-    hostname: salt-minion-2
+    environment:
+      - SALT_PREFIX=dev
     depends_on:
-      - salt-master    
+      - master
     volumes:
       - ./data/minion.conf:/etc/salt/minion.d/minion.conf
+    scale: 2

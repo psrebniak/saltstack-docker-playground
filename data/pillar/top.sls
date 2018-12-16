@@ -4,3 +4,6 @@ base:
     - users.monitoring
     - users.removed
     - packages
+  'dev-*':
+    - users.developers
+    - packages.dev

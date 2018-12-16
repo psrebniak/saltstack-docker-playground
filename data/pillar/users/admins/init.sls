@@ -6,4 +6,7 @@ users:
     enforce_password: True
     empty_password: False
     sudouser: True
+    groups:
+      - administrators
+      - developers
   
