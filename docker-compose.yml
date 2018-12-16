@@ -1,0 +1,25 @@
+version: '3'
+
+services: 
+  salt-master:
+    build: ./docker/master/
+    hostname: salt-master
+    volumes:
+      - ./data/master.conf:/etc/salt/master.d/master.conf
+      - ./data/pillar:/srv/pillar
+      - ./data/salt:/srv/salt
+      - ./data/formulas:/srv/formulas
+  salt-minion-1:
+    build: ./docker/minion/
+    hostname: salt-minion-1
+    depends_on:
+      - salt-master    
+    volumes:
+      - ./data/minion.conf:/etc/salt/minion.d/minion.conf
+  salt-minion-2:
+    build: ./docker/minion/
+    hostname: salt-minion-2
+    depends_on:
+      - salt-master    
+    volumes:
+      - ./data/minion.conf:/etc/salt/minion.d/minion.conf

@@ -1,0 +1,6 @@
+[submodule "data/formulas/packages-formula"]
+	path = data/formulas/packages-formula
+	url = https://github.com/saltstack-formulas/packages-formula.git
+[submodule "data/formulas/users-formula"]
+	path = data/formulas/users-formula
+	url = https://github.com/saltstack-formulas/users-formula.git
