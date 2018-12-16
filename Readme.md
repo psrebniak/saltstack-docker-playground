@@ -16,7 +16,7 @@ there is no need to run `$ salt '*' state.apply` on startup.
 Master will apply state due to `startup_states: highstate` entry in minion.conf.
 It can take some time to bootstrap minions.
 
-## show to get into master
+## how to get into master
 ```$ docker-compose exec salt-master /bin/bash```
 
 you can login to salt-minion-1 and salt-minion-2 by just changing container name to command above
