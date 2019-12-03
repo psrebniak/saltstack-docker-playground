@@ -1,6 +1,6 @@
 # docker-compose [saltstack](https://docs.saltstack.com) playground
 
-Docker-compose file that create saltstack playground.
+Docker-compose file that create saltstack playground.<br/>
 Containers:
 - master - master container
 - minions with prefixed ID (prefix-hostname)
