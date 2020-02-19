@@ -1,4 +1,4 @@
-FROM debian
+FROM debian:stretch
 
 RUN apt update && apt install -y curl ca-certificates gnupg && apt clean
 RUN curl -L https://download.docker.com/linux/ubuntu/gpg | apt-key add -
